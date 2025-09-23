@@ -7,6 +7,15 @@ import { useState, useEffect } from "react";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Students from "./pages/Students";
+import Therapies from "./pages/Therapies";
+import IEPs from "./pages/IEPs";
+import Forms from "./pages/Forms";
+import Roles from "./pages/Roles";
+import Reports from "./pages/Reports";
+import Documents from "./pages/Documents";
+import Settings from "./pages/Settings";
+import Help from "./pages/Help";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -64,15 +73,15 @@ const App = () => {
               <Route element={<DashboardLayout user={user} onLogout={handleLogout} />}>
                 <Route path="/dashboard" element={<Dashboard />} />
                 {/* Placeholder routes for future pages */}
-                <Route path="/students" element={<div className="p-6"><h1 className="text-2xl font-bold">Students Directory</h1><p className="text-muted-foreground">Coming soon...</p></div>} />
-                <Route path="/therapies" element={<div className="p-6"><h1 className="text-2xl font-bold">Therapies</h1><p className="text-muted-foreground">Coming soon...</p></div>} />
-                <Route path="/ieps" element={<div className="p-6"><h1 className="text-2xl font-bold">IEPs</h1><p className="text-muted-foreground">Coming soon...</p></div>} />
-                <Route path="/forms" element={<div className="p-6"><h1 className="text-2xl font-bold">Forms</h1><p className="text-muted-foreground">Coming soon...</p></div>} />
-                <Route path="/roles" element={<div className="p-6"><h1 className="text-2xl font-bold">Roles & Permissions</h1><p className="text-muted-foreground">Coming soon...</p></div>} />
-                <Route path="/reports" element={<div className="p-6"><h1 className="text-2xl font-bold">Reports</h1><p className="text-muted-foreground">Coming soon...</p></div>} />
-                <Route path="/documents" element={<div className="p-6"><h1 className="text-2xl font-bold">Documents</h1><p className="text-muted-foreground">Coming soon...</p></div>} />
-                <Route path="/settings" element={<div className="p-6"><h1 className="text-2xl font-bold">Settings</h1><p className="text-muted-foreground">Coming soon...</p></div>} />
-                <Route path="/help" element={<div className="p-6"><h1 className="text-2xl font-bold">Help & Support</h1><p className="text-muted-foreground">Coming soon...</p></div>} />
+                <Route path="/students" element={<Students />} />
+                <Route path="/therapies" element={<Therapies />} />
+                <Route path="/ieps" element={<IEPs />} />
+                <Route path="/forms" element={<Forms />} />
+                <Route path="/roles" element={<Roles />} />
+                <Route path="/reports" element={<Reports />} />
+                <Route path="/documents" element={<Documents />} />
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/help" element={<Help />} />
               </Route>
             ) : (
               <Route path="*" element={<Navigate to="/login" replace />} />
