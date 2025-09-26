@@ -27,15 +27,38 @@ const App = () => {
 
   useEffect(() => {
     // Check for existing user session
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      try {
-        setUser(JSON.parse(storedUser));
-      } catch (error) {
-        localStorage.removeItem('user');
+    const checkUser = () => {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        try {
+          setUser(JSON.parse(storedUser));
+        } catch (error) {
+          localStorage.removeItem('user');
+        }
       }
-    }
-    setIsLoading(false);
+      setIsLoading(false);
+    };
+
+    checkUser();
+
+    // Listen for storage changes (when user logs in)
+    const handleStorageChange = () => {
+      checkUser();
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    // Listen for custom login event
+    const handleLoginEvent = () => {
+      checkUser();
+    };
+
+    window.addEventListener('userLoggedIn', handleLoginEvent);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('userLoggedIn', handleLoginEvent);
+    };
   }, []);
 
   const handleLogout = () => {

@@ -30,6 +30,9 @@ const Login = () => {
           description: "Successfully signed in to Staff Portal.",
         });
         
+        // Dispatch custom event to notify app of login
+        window.dispatchEvent(new Event('userLoggedIn'));
+        
         navigate('/dashboard');
       } else {
         throw new Error('Invalid credentials');
