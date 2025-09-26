@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Search, Bell, Menu, User, LogOut } from "lucide-react";
+import logoImage from "@/assets/christ-special-school-logo.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -44,10 +45,18 @@ export const DashboardLayout = ({ user, onLogout }: DashboardLayoutProps) => {
             <div className="flex items-center gap-4">
               <SidebarTrigger className="lg:hidden" />
               
-              {/* Breadcrumbs - Will be dynamic based on route */}
-              <nav className="hidden md:flex text-sm text-muted-foreground">
-                <span>Dashboard</span>
-              </nav>
+              {/* Logo */}
+              <div className="flex items-center gap-3">
+                <img 
+                  src={logoImage} 
+                  alt="Christ Special School Logo" 
+                  className="h-8 w-8 object-contain"
+                />
+                <div className="hidden md:block">
+                  <h2 className="text-lg font-semibold text-primary">Christ Special School</h2>
+                  <p className="text-xs text-muted-foreground">Staff Portal</p>
+                </div>
+              </div>
             </div>
 
             <div className="flex items-center gap-4 flex-1 max-w-md mx-4">

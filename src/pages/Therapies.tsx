@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { AddTherapyDialog } from "@/components/forms/AddTherapyDialog";
+import { AddSessionDialog } from "@/components/forms/AddSessionDialog";
 
 const therapyTypes = [
   { id: "speech", name: "Speech Therapy", color: "bg-blue-500" },
@@ -87,10 +89,10 @@ export default function Therapies() {
           <h1 className="text-3xl font-bold text-foreground">Therapy Management</h1>
           <p className="text-muted-foreground mt-1">Schedule and track therapy sessions</p>
         </div>
-        <Button className="glass-button-primary">
-          <Plus className="h-4 w-4 mr-2" />
-          Schedule Session
-        </Button>
+        <div className="flex gap-2">
+          <AddTherapyDialog />
+          <AddSessionDialog />
+        </div>
       </div>
 
       {/* Therapy Type Stats */}

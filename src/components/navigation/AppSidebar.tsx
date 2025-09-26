@@ -72,15 +72,6 @@ export function AppSidebar() {
           </div>
         )}
 
-        {/* Quick Actions */}
-        <div className="p-2">
-          <SidebarMenuButton asChild className="btn-institutional">
-            <button className="w-full justify-start">
-              <UserPlus className="h-4 w-4" />
-              {!collapsed && <span>New Student</span>}
-            </button>
-          </SidebarMenuButton>
-        </div>
 
         {/* Main Navigation */}
         <SidebarGroup>

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AddStudentDialog } from "@/components/forms/AddStudentDialog";
 
 const mockStudents = [
   {
@@ -66,10 +67,7 @@ export default function Students() {
           <h1 className="text-3xl font-bold text-foreground">Students Directory</h1>
           <p className="text-muted-foreground mt-1">Manage student records and information</p>
         </div>
-        <Button className="glass-button-primary">
-          <Plus className="h-4 w-4 mr-2" />
-          Add New Student
-        </Button>
+        <AddStudentDialog />
       </div>
 
       {/* Stats Cards */}

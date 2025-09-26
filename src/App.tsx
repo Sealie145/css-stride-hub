@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
+import Welcome from "./pages/Welcome";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Students from "./pages/Students";
@@ -59,14 +60,12 @@ const App = () => {
           <Routes>
             {/* Public routes */}
             <Route 
+              path="/" 
+              element={user ? <Navigate to="/dashboard" replace /> : <Welcome />} 
+            />
+            <Route 
               path="/login" 
               element={user ? <Navigate to="/dashboard" replace /> : <Login />} 
-            />
-            
-            {/* Protected routes */}
-            <Route 
-              path="/" 
-              element={user ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />} 
             />
             
             {user ? (

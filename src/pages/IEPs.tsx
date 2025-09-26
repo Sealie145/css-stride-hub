@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
+import { AddIEPDialog } from "@/components/forms/AddIEPDialog";
 
 const mockIEPs = [
   {
@@ -121,10 +122,7 @@ export default function IEPs() {
           <h1 className="text-3xl font-bold text-foreground">Individual Education Plans</h1>
           <p className="text-muted-foreground mt-1">Manage and track student IEPs and goals</p>
         </div>
-        <Button className="glass-button-primary">
-          <Plus className="h-4 w-4 mr-2" />
-          Create New IEP
-        </Button>
+        <AddIEPDialog />
       </div>
 
       {/* Stats Cards */}
