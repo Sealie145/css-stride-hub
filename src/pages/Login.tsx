@@ -166,7 +166,7 @@ const Login = () => {
 
       {/* Login Dialog */}
       <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
-        <DialogContent className="sm:max-w-md bg-white/90 backdrop-blur-md border border-white/20 shadow-2xl">
+        <DialogContent className="sm:max-w-md bg-white/10 backdrop-blur-xl border border-white/30 shadow-2xl rounded-2xl">
           <DialogHeader className="text-center space-y-4">
             <div className="mx-auto">
               <img 
@@ -176,12 +176,12 @@ const Login = () => {
               />
             </div>
             <div>
-              <DialogTitle className="text-2xl font-bold text-gray-900">Welcome Back</DialogTitle>
+              <DialogTitle className="text-2xl font-bold text-gray-800">Welcome Back</DialogTitle>
               <p className="text-gray-600 mt-1">Sign in to your account</p>
             </div>
           </DialogHeader>
 
-          <form onSubmit={handleLogin} className="space-y-4 mt-6">
+          <form onSubmit={handleLogin} className="space-y-5 mt-6">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-sm font-medium text-gray-700">
                 Email Address
@@ -191,7 +191,7 @@ const Login = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-white/20 rounded-xl bg-white/20 backdrop-blur-sm placeholder:text-gray-500 text-gray-800 focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all"
                 placeholder="Enter your email"
                 required
               />
@@ -207,14 +207,14 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 pr-12 border border-white/20 rounded-xl bg-white/20 backdrop-blur-sm placeholder:text-gray-500 text-gray-800 focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all"
                   placeholder="Enter your password"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -233,9 +233,16 @@ const Login = () => {
             <Button 
               type="submit" 
               disabled={isLoading}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium transition-colors"
+              className="w-full bg-blue-600/90 hover:bg-blue-700/90 backdrop-blur-sm text-white py-3 rounded-xl font-medium transition-all shadow-lg hover:shadow-xl border border-blue-500/20"
             >
-              {isLoading ? "Signing In..." : "Sign In"}
+              {isLoading ? (
+                <div className="flex items-center gap-2">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                  Signing In...
+                </div>
+              ) : (
+                "Sign In"
+              )}
             </Button>
           </form>
         </DialogContent>
