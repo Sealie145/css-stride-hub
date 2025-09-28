@@ -7,7 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { AddTherapyDialog } from "@/components/forms/AddTherapyDialog";
-import { AddSessionDialog } from "@/components/forms/AddSessionDialog";
 
 const therapyTypes = [
   { id: "speech", name: "Speech Therapy", color: "bg-blue-500" },
@@ -91,7 +90,6 @@ export default function Therapies() {
         </div>
         <div className="flex gap-2">
           <AddTherapyDialog />
-          <AddSessionDialog />
         </div>
       </div>
 
