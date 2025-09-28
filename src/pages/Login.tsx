@@ -166,7 +166,7 @@ const Login = () => {
 
       {/* Login Dialog */}
       <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
-        <DialogContent className="sm:max-w-md bg-white/80 backdrop-blur-lg border border-white/40 shadow-2xl rounded-2xl">
+        <DialogContent className="sm:max-w-md bg-white/50 backdrop-blur-lg border border-white/30 shadow-2xl rounded-2xl">
           <DialogHeader className="text-center space-y-4">
             <div className="mx-auto">
               <img 
@@ -191,7 +191,7 @@ const Login = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border border-white/30 rounded-xl bg-white/60 backdrop-blur-sm placeholder:text-gray-500 text-gray-900 focus:ring-2 focus:ring-blue-400/60 focus:border-blue-400/60 transition-all shadow-sm"
+                className="w-full px-4 py-3 border border-white/20 rounded-xl bg-white/40 backdrop-blur-sm placeholder:text-gray-500 text-gray-900 focus:ring-2 focus:ring-blue-400/60 focus:border-blue-400/60 transition-all shadow-sm"
                 placeholder="Enter your email"
                 required
               />
@@ -207,7 +207,7 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 pr-12 border border-white/30 rounded-xl bg-white/60 backdrop-blur-sm placeholder:text-gray-500 text-gray-900 focus:ring-2 focus:ring-blue-400/60 focus:border-blue-400/60 transition-all shadow-sm"
+                  className="w-full px-4 py-3 pr-12 border border-white/20 rounded-xl bg-white/40 backdrop-blur-sm placeholder:text-gray-500 text-gray-900 focus:ring-2 focus:ring-blue-400/60 focus:border-blue-400/60 transition-all shadow-sm"
                   placeholder="Enter your password"
                   required
                 />
