@@ -166,7 +166,7 @@ const Login = () => {
 
       {/* Login Dialog */}
       <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
-        <DialogContent className="sm:max-w-md bg-white/10 backdrop-blur-xl border border-white/30 shadow-2xl rounded-2xl">
+        <DialogContent className="sm:max-w-md bg-white/80 backdrop-blur-lg border border-white/40 shadow-2xl rounded-2xl">
           <DialogHeader className="text-center space-y-4">
             <div className="mx-auto">
               <img 
@@ -176,14 +176,14 @@ const Login = () => {
               />
             </div>
             <div>
-              <DialogTitle className="text-2xl font-bold text-gray-800">Welcome Back</DialogTitle>
-              <p className="text-gray-600 mt-1">Sign in to your account</p>
+              <DialogTitle className="text-2xl font-bold text-gray-900">Welcome Back</DialogTitle>
+              <p className="text-gray-700 mt-1">Sign in to your account</p>
             </div>
           </DialogHeader>
 
           <form onSubmit={handleLogin} className="space-y-5 mt-6">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+              <Label htmlFor="email" className="text-sm font-medium text-gray-800">
                 Email Address
               </Label>
               <Input
@@ -191,14 +191,14 @@ const Login = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border border-white/20 rounded-xl bg-white/20 backdrop-blur-sm placeholder:text-gray-500 text-gray-800 focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all"
+                className="w-full px-4 py-3 border border-white/30 rounded-xl bg-white/60 backdrop-blur-sm placeholder:text-gray-500 text-gray-900 focus:ring-2 focus:ring-blue-400/60 focus:border-blue-400/60 transition-all shadow-sm"
                 placeholder="Enter your email"
                 required
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+              <Label htmlFor="password" className="text-sm font-medium text-gray-800">
                 Password
               </Label>
               <div className="relative">
@@ -207,14 +207,14 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 pr-12 border border-white/20 rounded-xl bg-white/20 backdrop-blur-sm placeholder:text-gray-500 text-gray-800 focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all"
+                  className="w-full px-4 py-3 pr-12 border border-white/30 rounded-xl bg-white/60 backdrop-blur-sm placeholder:text-gray-500 text-gray-900 focus:ring-2 focus:ring-blue-400/60 focus:border-blue-400/60 transition-all shadow-sm"
                   placeholder="Enter your password"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-800 transition-colors"
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -233,7 +233,7 @@ const Login = () => {
             <Button 
               type="submit" 
               disabled={isLoading}
-              className="w-full bg-blue-600/90 hover:bg-blue-700/90 backdrop-blur-sm text-white py-3 rounded-xl font-medium transition-all shadow-lg hover:shadow-xl border border-blue-500/20"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-medium transition-all shadow-lg hover:shadow-xl"
             >
               {isLoading ? (
                 <div className="flex items-center gap-2">
